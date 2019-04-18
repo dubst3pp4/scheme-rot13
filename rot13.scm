@@ -1,6 +1,6 @@
 ;; rot13, first and complicated version
 (define (rot13 some-string)
-  (letrec* ((rot13-helper (lambda (character rest-of-string)
+  (letrec ((rot13-helper (lambda (character rest-of-string)
                             (if (null? rest-of-string) 
                                 (cons (rotate character) '())
                                 (cons (rotate character) (rot13-helper (car rest-of-string) (cdr rest-of-string)))))) 
